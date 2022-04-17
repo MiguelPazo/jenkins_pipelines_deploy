@@ -1,0 +1,42 @@
+app:
+  env: production
+  region: us-east-1
+  port: 3030
+  base_url: http://localhost:3030
+  cors_allow_origin: '.*(app.com)$'
+  access_token: app1_access_token
+  swagger_api_url: http://localhost:3031
+  swagger_access_token: app1_swagger_access_token
+  encryption_key: app1_encryption_key_general
+  provisioned_concurrency: 0
+
+auth:
+  secret: app1_auth_secret
+
+databases:
+  dynamodb:
+    region: app1_dynamodb_region
+    access_key: app1_dynamodb_access_key
+    secret_key: app1_dynamodb_secret_key
+  mongodb:
+    connector: atlas
+    host_reader: app1_mongodb_host_reader
+    host_writer: app1_mongodb_host_writer
+    username: app1_mongodb_username
+    password: app1_mongodb_password
+    database: app1_mongodb_database
+  mysql:
+    host_reader: app1_mysql_host_reader
+    host_writer: app1_mysql_host_writer
+    username: app1_mysql_username
+    password: app1_mysql_password
+    database: app1_mysql_database
+  redis:
+    host_reader: app1_redis_host_reader
+    host_writer: app1_redis_host_writer
+    password: app1_redis_password
+
+sqs:
+  region: app1_sqs_region
+  access_key: app1_sqs_access_key
+  secret_key: app1_sqs_secret_key

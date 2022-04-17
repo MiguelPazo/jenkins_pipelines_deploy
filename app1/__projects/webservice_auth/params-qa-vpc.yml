@@ -1,0 +1,7 @@
+vpc:
+  securityGroupIds:
+    - sg-xxxxxxx
+  subnetIds:
+    - subnet-xxxxxxx
+    - subnet-xxxxxxx
+    - subnet-xxxxxxx

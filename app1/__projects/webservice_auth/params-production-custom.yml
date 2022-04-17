@@ -1,0 +1,12 @@
+domains:
+  production: auth-api.app1.com
+certificates:
+  production: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+customDomain:
+  domainName: ${self:custom.domains.${self:custom.stage}}
+  basePath: ""
+  stage: "${self:custom.stage}"
+  endpointType: "regional"
+  securityPolicy: "tls_1_2"
+  createRoute53Record: true
+  certificateArn: ${self:custom.certificates.${self:custom.stage}}
