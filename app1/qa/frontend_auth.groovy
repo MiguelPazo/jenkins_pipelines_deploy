@@ -36,7 +36,7 @@ pipeline {
             steps {
                 dir('deploy_projects') {
                     git branch: 'main',
-                            credentialsId: 'gitlab',
+                            credentialsId: 'github',
                             url: 'git@github.com:MiguelPazo/jenkins_pipelines_deploy.git'
                 }
 
@@ -53,11 +53,11 @@ pipeline {
             }
         }
 
-        stage('Download from GitLab') {
+        stage('Download from Github') {
             steps {
                 dir('frontend_app') {
                     git branch: 'main',
-                            credentialsId: 'gitlab',
+                            credentialsId: 'github',
                             url: 'git@github.com:juangura19/jgr-frontend-base.git'
                 }
             }
