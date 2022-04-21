@@ -104,7 +104,7 @@ pipeline {
         stage('Replace params credentials to Unitest') {
             steps {
                 script {
-                    modules._general.loadCredentialsTests('webservice_app/.mocharc.js')
+                    modules._general.replaceParams('webservice_app/.mocharc.js')
                 }
             }
         }

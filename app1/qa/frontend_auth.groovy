@@ -138,7 +138,7 @@ pipeline {
                 sshagent(['app1_jenkins_ssh']) {
                     dir('frontend_app') {
                         sh """
-                        ssh -tt -o 'StrictHostKeyChecking no' jenkins@127.0.0.1 <<EOF                            
+                        ssh -tt -o 'StrictHostKeyChecking no' jenkins@${APP1_SERVER1_HOST} <<EOF                            
                             sudo rm -rf /var/www/app1_frontend_auth
                             sudo mkdir /var/www/app1_frontend_auth
                             sudo chown jenkins:jenkins /var/www/app1_frontend_auth
@@ -147,10 +147,10 @@ pipeline {
                         EOF
                         """
 
-                        sh 'scp dist/app/app.tar.gz jenkins@127.0.0.1:/var/www/app1_frontend_auth'
+                        sh 'scp dist/app/app.tar.gz jenkins@${APP1_SERVER1_HOST}:/var/www/app1_frontend_auth'
 
                         sh """
-                        ssh -tt -o 'StrictHostKeyChecking no' jenkins@127.0.0.1 <<EOF
+                        ssh -tt -o 'StrictHostKeyChecking no' jenkins@${APP1_SERVER1_HOST} <<EOF
                           cd /var/www/app1_frontend_auth
                           tar xfz app.tar.gz
                           rm -rf app.tar.gz
