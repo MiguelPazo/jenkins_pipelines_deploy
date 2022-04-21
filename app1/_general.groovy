@@ -2,7 +2,7 @@ def loadCredentials(prefix) {
     withCredentials([
             string(credentialsId: "$prefix-app1_aws_access_key", variable: "app1_aws_access_key"),
             string(credentialsId: "$prefix-app1_aws_secret_key", variable: "app1_aws_secret_key"),
-//            string(credentialsId: "$prefix-app1_pulumi_access_token", variable: "app1_pulumi_access_token"),
+            string(credentialsId: "$prefix-app1_pulumi_access_token", variable: "app1_pulumi_access_token"),
 //            string(credentialsId: "$prefix-app1_frontend_auth_url", variable: "app1_frontend_auth_url"),
 //            string(credentialsId: "$prefix-app1_webservice_auth_host", variable: "app1_webservice_auth_host"),
 //            string(credentialsId: "$prefix-app1_recaptcha_siteid", variable: "app1_recaptcha_siteid"),
