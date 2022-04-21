@@ -95,7 +95,6 @@ pipeline {
                 sh "echo 'sonar.tests=src' >> frontend_app/sonar-project.properties"
                 sh "echo 'sonar.test.inclusions=src/**/*.spec.ts' >> frontend_app/sonar-project.properties"
                 sh "echo 'sonar.exclusions=node_modules,src/controllers/*,src/filters/*,src/message/*,src/constants/*,src/dto/*,src/auth/*,src/middlewares/*,src/common/*,src/server.ts,src/*Config.ts' >> frontend_app/sonar-project.properties"
-                sh "echo 'sonar.typescript.lcov.reportPaths=coverage/lcov.info' >> frontend_app/sonar-project.properties"
 
                 sh 'cat frontend_app/sonar-project.properties'
 
