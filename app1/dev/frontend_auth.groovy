@@ -129,7 +129,7 @@ pipeline {
             steps {
                 dir('frontend_app') {
                     sh 'node --max_old_space_size=1024 ./node_modules/@angular/cli/bin/ng build --configuration production'
-                    sh 'cd dist/app && tar cfz app.tar.gz *'
+                    sh 'cd dist/iasd-frontend-main && tar cfz app.tar.gz *'
                 }
             }
         }
@@ -148,7 +148,7 @@ pipeline {
                         EOF
                         """
 
-                        sh 'scp dist/app/app.tar.gz jenkins@${APP1_SERVER1_HOST}:/var/www/app1_frontend_auth'
+                        sh 'scp dist/iasd-frontend-main/app.tar.gz jenkins@${APP1_SERVER1_HOST}:/var/www/app1_frontend_auth'
 
                         sh """
                         ssh -tt -o 'StrictHostKeyChecking no' jenkins@${APP1_SERVER1_HOST} <<EOF

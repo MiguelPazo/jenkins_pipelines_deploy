@@ -125,9 +125,9 @@ pipeline {
 
         stage('Deploy on AWS') {
             steps {
-                sh 'mv deploy_cdn/data/cdn_errors content/dist/app/'
+                sh 'mv deploy_cdn/data/cdn_errors content/dist/iasd-frontend-main/'
                 sh 'rm -rf deploy_cdn/data/*'
-                sh 'cp -R content/dist/app/* deploy_cdn/data/'
+                sh 'cp -R content/dist/iasd-frontend-main/* deploy_cdn/data/'
                 sh 'cd deploy_cdn && npm install'
                 sh 'pulumi stack select ${PULUMI_STACK} --cwd deploy_cdn/'
                 sh 'pulumi config set aws:region ${PULUMI_AWS_REGION} --cwd deploy_cdn/'
