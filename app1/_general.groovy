@@ -68,38 +68,39 @@ def loadCredentials(prefix) {
 }
 
 def replaceParams(filePath) {
-    sh """
-        sed -i -- 's/app1_frontend_auth_url/${APP1_FRONTEND_AUTH_URL.replace('/', '\\/').replace('\$', '\\\$').replace('&', '\\&')}/g' ${filePath}
-        sed -i -- 's/app1_webservice_auth_host/${APP1_WEBSERVICE_AUTH_HOST.replace('/', '\\/').replace('\$', '\\\$').replace('&', '\\&')}/g' ${filePath}
-        sed -i -- 's/app1_recaptcha_siteid/${APP1_RECAPTCHA_SITEID.replace('/', '\\/').replace('\$', '\\\$').replace('&', '\\&')}/g' ${filePath}
-        sed -i -- 's/app1_analytics_id/${APP1_ANALYTICS_ID.replace('/', '\\/').replace('\$', '\\\$').replace('&', '\\&')}/g' ${filePath}
-        sed -i -- 's/app1_access_token/${APP1_ACCESS_TOKEN.replace('/', '\\/').replace('\$', '\\\$').replace('&', '\\&')}/g' ${filePath}
-        sed -i -- 's/app1_swagger_access_token/${APP1_SWAGGER_ACCESS_TOKEN.replace('/', '\\/').replace('\$', '\\\$').replace('&', '\\&')}/g' ${filePath}
-        sed -i -- 's/app1_encryption_key_general/${APP1_ENCRYPTION_KEY_GENERAL.replace('/', '\\/').replace('\$', '\\\$').replace('&', '\\&')}/g' ${filePath}
-        sed -i -- 's/app1_auth_secret/${APP1_AUTH_SECRET.replace('/', '\\/').replace('\$', '\\\$').replace('&', '\\&')}/g' ${filePath}
-        sed -i -- 's/app1_dynamodb_region/${APP1_DYNAMODB_REGION.replace('/', '\\/').replace('\$', '\\\$').replace('&', '\\&')}/g' ${filePath}
-        sed -i -- 's/app1_dynamodb_access_key/${APP1_DYNAMODB_ACCESS_KEY.replace('/', '\\/').replace('\$', '\\\$').replace('&', '\\&')}/g' ${filePath}
-        sed -i -- 's/app1_dynamodb_secret_key/${APP1_DYNAMODB_SECRET_KEY.replace('/', '\\/').replace('\$', '\\\$').replace('&', '\\&')}/g' ${filePath}
-        sed -i -- 's/app1_mongodb_host_reader/${APP1_MONGODB_HOST_READER.replace('/', '\\/').replace('\$', '\\\$').replace('&', '\\&')}/g' ${filePath}
-        sed -i -- 's/app1_mongodb_host_writer/${APP1_MONGODB_HOST_WRITER.replace('/', '\\/').replace('\$', '\\\$').replace('&', '\\&')}/g' ${filePath}
-        sed -i -- 's/app1_mongodb_username/${APP1_MONGODB_USERNAME.replace('/', '\\/').replace('\$', '\\\$').replace('&', '\\&')}/g' ${filePath}
-        sed -i -- 's/app1_mongodb_password/${APP1_MONGODB_PASSWORD.replace('/', '\\/').replace('\$', '\\\$').replace('&', '\\&')}/g' ${filePath}
-        sed -i -- 's/app1_mongodb_database/${APP1_MONGODB_DATABASE.replace('/', '\\/').replace('\$', '\\\$').replace('&', '\\&')}/g' ${filePath}
-        sed -i -- 's/app1_mysql_host_reader/${APP1_MYSQL_HOST_READER.replace('/', '\\/').replace('\$', '\\\$').replace('&', '\\&')}/g' ${filePath}
-        sed -i -- 's/app1_mysql_host_writer/${APP1_MYSQL_HOST_WRITER.replace('/', '\\/').replace('\$', '\\\$').replace('&', '\\&')}/g' ${filePath}
-        sed -i -- 's/app1_mysql_username/${APP1_MYSQL_USERNAME.replace('/', '\\/').replace('\$', '\\\$').replace('&', '\\&')}/g' ${filePath}
-        sed -i -- 's/app1_mysql_password/${APP1_MYSQL_PASSWORD.replace('/', '\\/').replace('\$', '\\\$').replace('&', '\\&')}/g' ${filePath}
-        sed -i -- 's/app1_mysql_database/${APP1_MYSQL_DATABASE.replace('/', '\\/').replace('\$', '\\\$').replace('&', '\\&')}/g' ${filePath}
-        sed -i -- 's/app1_redis_host_reader/${APP1_REDIS_HOST_READER.replace('/', '\\/').replace('\$', '\\\$').replace('&', '\\&')}/g' ${filePath}
-        sed -i -- 's/app1_redis_host_writer/${APP1_REDIS_HOST_WRITER.replace('/', '\\/').replace('\$', '\\\$').replace('&', '\\&')}/g' ${filePath}
-        sed -i -- 's/app1_redis_password/${APP1_REDIS_PASSWORD.replace('/', '\\/').replace('\$', '\\\$').replace('&', '\\&')}/g' ${filePath}
-        sed -i -- 's/app1_sqs_region/${APP1_SQS_REGION.replace('/', '\\/').replace('\$', '\\\$').replace('&', '\\&')}/g' ${filePath}
-        sed -i -- 's/app1_sqs_access_key/${APP1_SQS_ACCESS_KEY.replace('/', '\\/').replace('\$', '\\\$').replace('&', '\\&')}/g' ${filePath}
-        sed -i -- 's/app1_sqs_secret_key/${APP1_SQS_SECRET_KEY.replace('/', '\\/').replace('\$', '\\\$').replace('&', '\\&')}/g' ${filePath}
-        sed -i -- 's/app1_server1_host/${APP1_SERVER1_HOST.replace('/', '\\/').replace('\$', '\\\$').replace('&', '\\&')}/g' ${filePath}
-
-        sed -i -- 's/null_to_clean//g' ${filePath}
-    """
+    sh "sed -i -- 's/null_to_clean//g' ${filePath}"
+//    sh """
+//        sed -i -- 's/app1_frontend_auth_url/${APP1_FRONTEND_AUTH_URL.replace('/', '\\/').replace('\$', '\\\$').replace('&', '\\&')}/g' ${filePath}
+//        sed -i -- 's/app1_webservice_auth_host/${APP1_WEBSERVICE_AUTH_HOST.replace('/', '\\/').replace('\$', '\\\$').replace('&', '\\&')}/g' ${filePath}
+//        sed -i -- 's/app1_recaptcha_siteid/${APP1_RECAPTCHA_SITEID.replace('/', '\\/').replace('\$', '\\\$').replace('&', '\\&')}/g' ${filePath}
+//        sed -i -- 's/app1_analytics_id/${APP1_ANALYTICS_ID.replace('/', '\\/').replace('\$', '\\\$').replace('&', '\\&')}/g' ${filePath}
+//        sed -i -- 's/app1_access_token/${APP1_ACCESS_TOKEN.replace('/', '\\/').replace('\$', '\\\$').replace('&', '\\&')}/g' ${filePath}
+//        sed -i -- 's/app1_swagger_access_token/${APP1_SWAGGER_ACCESS_TOKEN.replace('/', '\\/').replace('\$', '\\\$').replace('&', '\\&')}/g' ${filePath}
+//        sed -i -- 's/app1_encryption_key_general/${APP1_ENCRYPTION_KEY_GENERAL.replace('/', '\\/').replace('\$', '\\\$').replace('&', '\\&')}/g' ${filePath}
+//        sed -i -- 's/app1_auth_secret/${APP1_AUTH_SECRET.replace('/', '\\/').replace('\$', '\\\$').replace('&', '\\&')}/g' ${filePath}
+//        sed -i -- 's/app1_dynamodb_region/${APP1_DYNAMODB_REGION.replace('/', '\\/').replace('\$', '\\\$').replace('&', '\\&')}/g' ${filePath}
+//        sed -i -- 's/app1_dynamodb_access_key/${APP1_DYNAMODB_ACCESS_KEY.replace('/', '\\/').replace('\$', '\\\$').replace('&', '\\&')}/g' ${filePath}
+//        sed -i -- 's/app1_dynamodb_secret_key/${APP1_DYNAMODB_SECRET_KEY.replace('/', '\\/').replace('\$', '\\\$').replace('&', '\\&')}/g' ${filePath}
+//        sed -i -- 's/app1_mongodb_host_reader/${APP1_MONGODB_HOST_READER.replace('/', '\\/').replace('\$', '\\\$').replace('&', '\\&')}/g' ${filePath}
+//        sed -i -- 's/app1_mongodb_host_writer/${APP1_MONGODB_HOST_WRITER.replace('/', '\\/').replace('\$', '\\\$').replace('&', '\\&')}/g' ${filePath}
+//        sed -i -- 's/app1_mongodb_username/${APP1_MONGODB_USERNAME.replace('/', '\\/').replace('\$', '\\\$').replace('&', '\\&')}/g' ${filePath}
+//        sed -i -- 's/app1_mongodb_password/${APP1_MONGODB_PASSWORD.replace('/', '\\/').replace('\$', '\\\$').replace('&', '\\&')}/g' ${filePath}
+//        sed -i -- 's/app1_mongodb_database/${APP1_MONGODB_DATABASE.replace('/', '\\/').replace('\$', '\\\$').replace('&', '\\&')}/g' ${filePath}
+//        sed -i -- 's/app1_mysql_host_reader/${APP1_MYSQL_HOST_READER.replace('/', '\\/').replace('\$', '\\\$').replace('&', '\\&')}/g' ${filePath}
+//        sed -i -- 's/app1_mysql_host_writer/${APP1_MYSQL_HOST_WRITER.replace('/', '\\/').replace('\$', '\\\$').replace('&', '\\&')}/g' ${filePath}
+//        sed -i -- 's/app1_mysql_username/${APP1_MYSQL_USERNAME.replace('/', '\\/').replace('\$', '\\\$').replace('&', '\\&')}/g' ${filePath}
+//        sed -i -- 's/app1_mysql_password/${APP1_MYSQL_PASSWORD.replace('/', '\\/').replace('\$', '\\\$').replace('&', '\\&')}/g' ${filePath}
+//        sed -i -- 's/app1_mysql_database/${APP1_MYSQL_DATABASE.replace('/', '\\/').replace('\$', '\\\$').replace('&', '\\&')}/g' ${filePath}
+//        sed -i -- 's/app1_redis_host_reader/${APP1_REDIS_HOST_READER.replace('/', '\\/').replace('\$', '\\\$').replace('&', '\\&')}/g' ${filePath}
+//        sed -i -- 's/app1_redis_host_writer/${APP1_REDIS_HOST_WRITER.replace('/', '\\/').replace('\$', '\\\$').replace('&', '\\&')}/g' ${filePath}
+//        sed -i -- 's/app1_redis_password/${APP1_REDIS_PASSWORD.replace('/', '\\/').replace('\$', '\\\$').replace('&', '\\&')}/g' ${filePath}
+//        sed -i -- 's/app1_sqs_region/${APP1_SQS_REGION.replace('/', '\\/').replace('\$', '\\\$').replace('&', '\\&')}/g' ${filePath}
+//        sed -i -- 's/app1_sqs_access_key/${APP1_SQS_ACCESS_KEY.replace('/', '\\/').replace('\$', '\\\$').replace('&', '\\&')}/g' ${filePath}
+//        sed -i -- 's/app1_sqs_secret_key/${APP1_SQS_SECRET_KEY.replace('/', '\\/').replace('\$', '\\\$').replace('&', '\\&')}/g' ${filePath}
+//        sed -i -- 's/app1_server1_host/${APP1_SERVER1_HOST.replace('/', '\\/').replace('\$', '\\\$').replace('&', '\\&')}/g' ${filePath}
+//
+//        sed -i -- 's/null_to_clean//g' ${filePath}
+//    """
 }
 
 return this
